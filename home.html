@@ -1,0 +1,26 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="assets/style.css"></link>
+	<title>Investment Calculator</title>
+</head>
+<body id="homeBody">
+    <ul id="navbar" class="nav navbar-nav navbar-left">
+        <a id="logo" href="/"><img id="logo" src="/assets/logo.png"></a>
+    </ul>
+    <ul id="navbar" class="nav navbar-nav navbar-right">
+        <li><a href="/">Calculator</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">About Us</a></li>
+    </ul>
+    <form class="form-inline" action="data" method="post">
+        <h1 id="main-head">Investment Calculator</h1>
+        <div class="form-group">
+            <input id=input type="text" id="search" name="search" placeholder=" Company stock symbol (e.g. AAPL for Apple):" style="width: 445px;"/>
+        </div>
+        <button type="submit" class="btn btn-info" value="Go" name="gobtn"> Go </button> </form>
+    {% if prompt %}
+    <div class= 'formtitle'>{{prompt}}</div>
+    {% endif %}
+</body>
+</html>
