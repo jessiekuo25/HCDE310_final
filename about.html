@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+    <style>
+        h1 {
+            font-family: 'Avenir';
+            font-size: 33px;
+            padding-left: 58px;
+            margin-top: 93px;
+        }
+
+        .container-fluid{
+            padding-left:0px;
+            padding-right:0px;
+        }
+        
+
+        h4, h5 {
+            font-family: "Avenir";
+        }
+
+        
+        /*defualt css starts here*/
+        body {
+            /*width:960px;*/
+            /*overflow-x: hidden;*/
+            margin:0;
+            padding:0;
+            font-family: 'Avenir';
+            font: 10px sans-serif;
+            background-color:#424242;
+            color:lightgray;
+        }
+
+        text {
+            font-family: 'Avenir';
+            /*fill: #000;*/
+            fill: white;
+        }
+
+        #logo {
+            margin-top: 2px;
+            margin-left: 20px;
+            margin-right: 50px;
+            height: 34px;
+            width: 40px;
+        }
+
+        #header-chart{
+            font-family: 'Avenir';
+            margin-top: 90px;
+            margin-left:20px;
+            color:lightgray;
+        }
+
+        #cal, #art, #about{
+            margin-top: 13px;
+        }
+
+        a.nobg:hover, 
+        a.nobg:focus, .nav li:hover {
+            background-color:transparent;
+            color: orange;
+            cursor: pointer;
+        }
+        /*footer > #header2 {
+            padding-top: 60px;
+            margin-left: 50px;
+            color:lightgray;
+        }
+        #articlelist{
+            margin-left: 25px;
+            color:lightgray;
+        }*/
+
+        #navbar-chart {
+            background-color: #262626; 
+            font-family: "Avenir";
+            font-size: 14px;
+            height: 50px;
+        }
+
+        .nav>li>a:hover,  .nav>li>a:focus {
+            background-color:transparent !important;
+        }
+
+        a {
+            color:lightskyblue;
+            font-family:"Avenir";
+        }
+        p {
+            font-family: "Avenir";
+            margin-left: 58px;
+            font-size: 16px;
+        }
+        .nav>li>a {
+            padding: 5px 20px;
+        }
+
+        h2 {
+            font-family: "Avenir";
+            margin-left: 58px;
+            margin-top: 90px;
+        }
+
+        #pic {
+            padding-right:0px;
+            margin-right:0px;
+            padding-left:0px;
+            margin-left:0px;
+        }
+
+        .leftAlign {
+            text-align: left;
+        }
+
+        footer {
+            background-color:#262626;
+        }
+
+        #footerHead{
+            padding-top: 40px;
+        }
+
+    </style>
+    <title>Investment Calculator</title>
+</head>
+<body>
+    <ul id="navbar-chart" class="navbar-fixed-top nav navbar-nav navbar-left">
+        <li><a id="logo" href="/"><img id="logo" src="/assets/logo2.png"></a></li>
+        <li id="cal"><a href="/" class="nobg">Calculator</a></li>
+        <li id="about"><a href="#" class="nobg">About Us</a></li>
+    </ul>
+    <div style="width: 87vw;">
+        <h1>About Stock Analyzer</h1>
+        <p>The website, Stock Analyzer, helps the users decide whether to invest in a company by providing 
+            stock information and related articles for that company. Our goal is to provide quick access to stock 
+            related information so the website may aid our users in making well-thoughtout investments. 
+        </p><br/>
+        <p style="padding-bottom:40px;">The data for our financial information (e.g. stock chart) is from Yahoo Finance. For related articles
+            and current news, we retrieved the data from New York Times. Also we give credit to TechanJS for integrated 
+            their d3 graph.
+        </p>
+        <iframe style="padding-left:60px;" width="800" height="480" src="https://www.youtube.com/embed/gFTDgu82kv4" frameborder="0" allowfullscreen></iframe>
+    </div>
+</body>
+<footer>
+    <h1 id="footerHead" style="margin-bottom:35px;">Developers</h1>
+    <div class="container" style="padding-bottom: 210px;">
+        <div class="row">
+            <div class="col-md-3" style="padding-right:0px;, margin-right:0px;">
+                <img id="pic" src="/assets/jessie.jpg" style="width:200px;, height:400px;"> 
+            </div>
+            <div class="col-md-3" style="padding-left:0px;, margin-left:0px;">
+                <h4 class="leftAlign">Yeun-Yuan (Jessie) Kuo</h4>
+                <p style="margin-left:0px;, padding-left:0px;">Jessie used Yahoo Finance API to create the interactive stock chart and table. 
+                    She also designed the interface of the website using HTML, CSS, and JavaScript. 
+                </p>
+            </div>
+            <div class="col-md-3" style="padding-right:0px;, margin-right:0px;">
+                <img id="pic" src="/assets/caleb.jpg" style="width:200px;, height:400px;">
+            </div>
+            <div class="col-md-3" style="padding-left:0px;, margin-left:0px;">
+                <h4 class="leftAlign">Geon Soo (Caleb) Park</h4>
+                <p style="margin-left:0px;, padding-left:0px">Caleb used New York Times APIs to create the lists of related articles for 
+                    the company and current news.
+                </p>
+            </div>
+        </dic>
+    <div>
+</footer>
+

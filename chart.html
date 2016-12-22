@@ -4,17 +4,47 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
     <style>
 
+   
+
     h1 {
+        font-family: 'Avenir';
         font-size: 35px;
         padding-left: 54px;
     }
+
+    .container-fluid{
+        padding-left:0px;
+        padding-right:0px;
+    }
+
+    #newsbackground {
+        background-color:#262626;
+        /*margin: 0 auto;*/
+        height: 270px;
+    }
+
+    h4, h5 {
+        font-family: "Avenir";
+    }
+
+    h6:hover, h6:focus{
+        color: lightgrey !important;
+    }
+
     /*defualt css starts here*/
     body {
+        /*width:960px;*/
+        overflow-x: hidden;
+        margin:0;
+        padding:0;
+        font-family: 'Avenir';
         font: 10px sans-serif;
         background-color:#424242;
+        color:lightgray;
     }
 
     text {
+        font-family: 'Avenir';
         /*fill: #000;*/
         fill: white;
     }
@@ -49,6 +79,10 @@
 
     .close.annotation.up path {
         fill: #00AA00;
+    }
+    .close{
+        font-size:12px;
+        opacity: .9;
     }
 
     path.volume {
@@ -176,7 +210,8 @@
     }
 
     .crosshair .axisannotation path {
-        fill: #DDDDDD;
+        /*fill: #DDDDDD;*/
+        fill: cornflowerblue;
     }
 
     .tradearrow path.tradearrow {
@@ -203,21 +238,26 @@
     .tradearrow path.highlight.sell {
         stroke: #9900FF;
     }
+
     #logo {
+        margin-top: 2px;
         margin-left: 20px;
         margin-right: 50px;
-        height: 45px;
+        height: 34px;
         width: 40px;
     }
 
     #header-chart{
+        font-family: 'Avenir';
         margin-top: 90px;
+        margin-left:20px;
         color:lightgray;
     }
 
     #cal, #art, #about{
         margin-top: 13px;
     }
+
     a.nobg:hover, 
     a.nobg:focus, .nav li:hover {
         background-color:transparent;
@@ -226,7 +266,7 @@
     }
     footer > #header2 {
         padding-top: 60px;
-        margin-left: 48px;
+        margin-left: 50px;
         color:lightgray;
     }
     #articlelist{
@@ -235,58 +275,131 @@
     }
 
     #navbar-chart {
+        background-color: #262626; 
         font-family: "Avenir";
         font-size: 14px;
+        height: 50px;
     }
 
-    .nav>li>a:hover{
+    .nav>li>a:hover,  .nav>li>a:focus {
         background-color:transparent !important;
     }
+
     a {
         color:lightskyblue;
+        font-family:"Avenir";
+    }
+    p {
+        font-family: "Avenir";
+    }
+    .nav>li>a {
+        padding: 5px 20px;
     }
     #table {
-        margin-top:0px;
+        font-family:'Avenir';
+        color:lightgray;
         margin-left:1000px;
-        height: 10px;
-        width: 10px;
+        height: 0px;
+        /*width: 100px;*/
+    }
+    .table-striped>tbody>tr:nth-child(odd)>td, 
+    .table-striped>tbody>tr:nth-child(odd)>th {
+        background-color: darkslategray;
+    }
+    #header2 {
+        padding-top: 40px;
+        font-family:'Avenir';
+        color: lightgray;
+    }
+    
+    #header3 {
+        font-family:'Avenir';
+        color: lightgray;
+        margin-top: 30px;
+        margin-bottom: 16px;
     }
 
+    #related {
+        padding-bottom:40px;
+    }
+
+    footer > #relatedArticles, footer > #newsTitle {
+        font-family: "Avenir";
+        color: lightgray;
+    }
+    #relatedArticles{
+        color: lightgray;
+    }
+
+    #footerlist{
+        padding-bottom: 25px;
+    }
 </style>
     <title>Investment Calculator</title>
 </head>
 <body>
-<ul id="navbar-chart" class="navbar-fixed-top nav navbar-nav navbar-left navbar-static-top">
-    <li><a id="logo" href="/"><img id="logo" src="/assets/logo.png"></a></li>
+<ul id="navbar-chart" class="navbar-fixed-top nav navbar-nav navbar-left">
+    <li><a id="logo" href="/"><img id="logo" src="/assets/logo2.png"></a></li>
     <li id="cal"><a href="/" class="nobg">Calculator</a></li>
-    <li id="art"><a href="#" class="nobg">Articles</a></li>
-    <li id="about"><a href="#" class="nobg">About Us</a></li>
+    <li id="about"><a href="/about" class="nobg">About Us</a></li>
 </ul>
-<h1 id="header-chart">{{name}} stock chart</h1>
-<table id="table" class="table table-striped" style="display: inline-block;">  
+<h1 id="header-chart">{{tableData.company}} Stock Chart</h1>
+<table id="table" class="table table-striped" style="display: inline-block">  
     <tr>
-        <td>Date</td>
-        <td>1</td>
+        <th>Company</th>
+        <td>{{tableData.company}}</td>
     </tr>
     <tr>
-        <td>Open</td>
-        <td>2</td>
+        <th>Stock Symol</th>
+        <td>{{tableData.ticker}}</td>
     </tr>
     <tr>
-        <td>High</td>
-        <td>3</td>
+        <th>Exchange Name</th>
+        <td>{{tableData.exchangeName}}</td>
     </tr>
     <tr>
-        <td>Low</td>
-        <td>4</td>
+        <th>Unit</th>
+        <td>{{tableData.unit}}</td>
     </tr>
     <tr>
-        <td>Close</td>
-        <td>5</td>
+        <th>Currency</th>
+        <td>{{tableData.currency}}</td>
     </tr>
     <tr>
-        <td>Volume</td>
-        <td>6</td>
+        <th>First-trade</th>
+        <td>{{tableData.firsttrade}}</td>
+    </tr>
+    <tr>
+        <th>Last-trade</th>
+        <td>{{tableData.lasttrade}}</td>
+    </tr>
+    <tr>
+        <th>Previous Close Price</th>
+        <td>{{tableData.closeprice}}</td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td>{{tableData.date}}</td>
+    </tr>
+    <tr>
+        <th>Close</th>
+        <td>{{tableData.close}}</td>
+    </tr>
+    <tr>
+        <th>High</th>
+        <td>{{tableData.high}}</td>
+    </tr>
+    <tr>
+        <th>Low</th>
+        <td>{{tableData.low}}</td>
+    </tr>
+    <tr>
+        <th>Open</th>
+        <td>{{tableData.open}}</td>
+    </tr>
+    <tr>
+        <th>Volume</th>
+        <td>{{tableData.volume}}</td>
     </tr>
 </table>
 <!--<button>Reset</button>-->
@@ -296,7 +409,8 @@
 
     var dim = {
         width: 960, height: 500,
-        margin: { top: 20, right: 50, bottom: 30, left: 50 },
+        // margin: { top: 20, right: 50, bottom: 30, left: 50 },
+        margin: { top: 20, right: 50, bottom: 30, left: 70 },
         ohlc: { height: 305 },
         indicator: { height: 65, padding: 5 }
     };
@@ -509,7 +623,7 @@
             .attr("x", 20)
             //---------Company name---------//
             //.text("Facebook, Inc. (FB)");
-            //.text({{name}});
+            //.text({{tableData.company}});
 
     svg.append("g")
             .attr("class", "x axis")
@@ -710,18 +824,28 @@
         svg.select("g.supstances").call(supstance.refresh);
         svg.select("g.tradearrow").call(tradearrow.refresh);
     }
-
 </script>
+<footer>
+    <div class="container-fluid" style="padding:0, margin:0">
+        <div id="realted" class="col-md-12" style="margin-left:45px">
+            <h2 id="header2">Related articles for {{tableData.company}}</h2>
+            <ul id="footerlist" style="padding-left: 20px">
+                {% for curr in urls%}
+                    <h4 id="relatedArticles"><a href= "{{curr.url}}" > {{curr.title | safe}}</a> </h4> <p> ({{curr.date}})</p>
+                {% endfor %}
+            </ul>
+        </div>
 
-<footer> 
-    <h2 id="header2">Related articles for {{name}}</h2>
-    <ul id="articlelist">
-		{% for curr in urls%}
-			<li><a href= "{{curr.url}}" >{{curr.title}}</a></li>
-			<h3> {{curr.date}} </h3>
-		{% endfor %}
-		{% for n in news%}
-			<a href = "{{n.url_news}}"><img src= "{{n.pic_news}}" {{n.title_news}}></a>
-		{% endfor %}
-	</ul>
+        <div id="newsbackground" class="col-md-12">
+            <h2 id="header3" style="margin-left:45px">Current News</h2>
+                <div class ="row" style="margin-left:30px">
+                {% for n in news%}  
+                    <div class = "col-xs-12 col-md-2">
+                        <a href="{{n.url_news}}"><img src = "{{n.pic_news}}" class="img-responsive"/>
+                        <h6><a href="{{n.url_news}}">{{n.title_news}}</h6>
+                    </div>
+                {% endfor %}
+                </div>
+        </div>
+    </div>
 </footer>
